@@ -1,0 +1,42 @@
+﻿@model HotelMamagement.Models.Room
+
+@{
+    ViewData["Title"] = "Edit Room";
+}
+
+<h2>Edit an Room</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="RoomId" />
+    <div class="form-group">
+        <label>Room Number</label>
+        <input type="text" class="form-control" asp-for="RoomNumber" required />
+    </div>
+
+    <div class="form-group">
+        <label>Room Type</label>
+        <select class="form-control" asp-for="RoomType" required>
+            <option value="Single">Single</option>
+            <option value="Double">Double</option>
+            <option value="Suite">Suite</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Price</label>
+        <input type="number" class="form-control" asp-for="Price" step="0.01" required />
+    </div>
+
+    <div class="form-group">
+        <label>Status</label>
+        <select class="form-control" asp-for="Status" required>
+            <option value="Available">Available</option>
+            <option value="Occupied">Occupied</option>
+            <option value="Maintenance">Maintenance</option>
+        </select>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

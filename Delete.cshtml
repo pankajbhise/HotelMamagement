@@ -1,0 +1,24 @@
+﻿@model HotelMamagement.Models.Room
+
+@{
+	ViewData["Title"] = "Delete Room";
+}
+
+<h2>Are you sure you want to delete this room?</h2>
+
+<div class="card">
+	<div class="card-body">
+		<h4>Room Details</h4>
+		<p><strong>Room Number: </strong>@Model.RoomNumber</p>
+		<p><strong>Room Type: </strong>@Model.RoomType</p>
+		<p><strong>Price: </strong>@Model.Price</p>
+		<p><strong>Status: </strong>@Model.Status</p>
+	</div>
+</div>
+
+<form asp-action="Delete" method="post">
+	<input type="hidden" asp-for="RoomId"/>
+	<br/>
+	<button type="submit" class="btn btn-danger">Delete</button>
+	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

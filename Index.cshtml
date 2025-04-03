@@ -1,0 +1,33 @@
+﻿@model List<HotelMamagement.Models.Room>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2>Rooms List</h2>
+<a class="btn btn-primary" href="/Rooms/Create">Add New Room</a>
+<table>
+    <tr>
+        <th>Room Number</th>
+        <th>Room Type</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    @foreach(var room in Model)
+    {
+        <tr>
+            <td>@room.RoomNumber</td>
+            <td>@room.RoomType</td>
+            <td>@room.Price</td>
+            <td>@room.Status</td>
+            <td>
+                <a href="/Rooms/Edit/@room.RoomId">Edit</a> |
+                <a href="/Rooms/Delete/@room.RoomId">Delete</a>
+            </td>
+        </tr>
+    }
+
+
+</table>
